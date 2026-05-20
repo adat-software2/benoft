@@ -1,4 +1,6 @@
 import Image from "next/image";
+import logoDark from "../public/assets/logo-dark.png";
+import logoWhite from "../public/assets/logo-white.png";
 
 const suites = [
   {
@@ -53,15 +55,19 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-[#f7f9ff] text-[#071044]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d8e4ff] bg-white/88 text-[#071044] shadow-[0_10px_40px_rgba(0,16,112,0.06)] backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-          <a href="#" className="flex items-center" aria-label="BENOFT home">
+          <a
+            href="#"
+            className="flex items-center"
+            aria-label="BENOFT home"
+          >
             <Image
-              src="/assets/logo-white.png"
+              src={logoWhite}
               alt="BENOFT - Better Business, One Platform"
               width={1294}
               height={378}
               quality={100}
               priority
-              className="h-14 w-auto object-contain"
+              className="h-11 w-auto object-contain"
             />
           </a>
 
@@ -131,12 +137,12 @@ export default function Home() {
                 <div className="mb-6 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     <Image
-                      src="/assets/logo-white.png"
+                      src={logoWhite}
                       alt=""
                       width={1294}
                       height={378}
                       quality={100}
-                      className="h-12 w-auto object-contain"
+                      className="h-14 w-auto object-contain"
                     />
                     <div>
                       <p className="text-sm font-semibold text-[#071044]">
@@ -324,17 +330,17 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="footer-about">
             <Image
-              src="/assets/logo-dark.png"
+              src={logoDark}
               alt="BENOFT - Better Business, One Platform"
-              width={1294}
-              height={378}
+              width={1594}
+              height={478}
               quality={100}
-              className="h-24 w-auto object-contain"
+              className="h-20 w-auto object-contain sm:h-24"
             />
             <p className="footer-summary">
-              BENOFT is a software solutions, and dedicated support services. With a focus on
-              innovation and customer satisfaction, we empower businesses
-              worldwide to thrive in a fast-evolving digital landscape.
+              BENOFT delivers intelligent business software, cloud platforms,
+              and dedicated technology support that help growing companies run
+              with clarity, control, and confidence.
             </p>
 
             <div className="footer-contact">
