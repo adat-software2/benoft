@@ -320,79 +320,84 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative bg-[linear-gradient(135deg,#ffffff_0%,#eef6ff_52%,#f7f9ff_100%)] px-5 py-24 text-[#071044] sm:px-8">
-        <div className="section-sheen" />
-        <div className="mx-auto max-w-5xl text-center">
-          <Image
-            src="/assets/logo-white.png"
-            alt="BENOFT - Better Business, One Platform"
-            width={1294}
-            height={378}
-            quality={100}
-            className="mx-auto mb-8 h-24 w-auto object-contain"
-          />
-          <h2 className="text-4xl font-semibold leading-tight sm:text-6xl">
-            Ready to shape your next business platform?
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#445188]">
-            Build a roadmap for ERP, CRM, HR, analytics, and automation with a
-            team focused on practical enterprise execution.
-          </p>
-          <a
-            href="mailto:info@adat-tech.com"
-            className="mt-9 inline-flex h-12 items-center justify-center rounded-md bg-[#0080ff] px-7 text-base font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#00a0ff]"
-          >
-            Contact BENOFT
-          </a>
-          <div className="mx-auto mt-12 grid max-w-4xl gap-4 text-left md:grid-cols-3">
-            <div className="contact-card">
-              <p className="text-xs font-semibold uppercase text-[#0080ff]">
-                Our Office
-              </p>
-              <p className="mt-3 text-sm leading-6 text-[#445188]">
-                M2, Hamad Sultan Saif Building, Hor Al Anz East, Dubai, United
-                Arab Emirates
-              </p>
-            </div>
-            <div className="contact-card">
-              <p className="text-xs font-semibold uppercase text-[#0080ff]">
-                Our Email
-              </p>
-              <a
-                href="mailto:info@adat-tech.com"
-                className="mt-3 inline-flex text-sm font-semibold text-[#071044] transition hover:text-[#0080ff]"
-              >
-                info@adat-tech.com
-              </a>
-            </div>
-            <div className="contact-card">
-              <p className="text-xs font-semibold uppercase text-[#0080ff]">
-                Our Phone
-              </p>
-              <a
-                href="tel:+97142297609"
-                className="mt-3 inline-flex text-sm font-semibold text-[#071044] transition hover:text-[#0080ff]"
-              >
-                +971 (04) 229 7609
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t border-[#d8e4ff] bg-[#f7f9ff]">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-8 text-sm text-[#445188] sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <div className="flex items-center">
+      <footer id="contact" className="site-footer">
+        <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="footer-about">
             <Image
-              src="/assets/logo-white.png"
+              src="/assets/logo-dark.png"
               alt="BENOFT - Better Business, One Platform"
               width={1294}
               height={378}
               quality={100}
-              className="h-14 w-auto object-contain"
+              className="h-24 w-auto object-contain"
             />
+            <p className="footer-summary">
+              BENOFT is a software solutions, and dedicated support services. With a focus on
+              innovation and customer satisfaction, we empower businesses
+              worldwide to thrive in a fast-evolving digital landscape.
+            </p>
+
+            <div className="footer-contact">
+              <h2>Contact Info</h2>
+              <p>
+                <strong>Our Office:</strong> M2, Hamad Sultan Saif Building,
+                Hor Al Anz East, Dubai, United Arab Emirates
+              </p>
+              <p>
+                <strong>Our Email:</strong>{" "}
+                <a href="mailto:info@adat-tech.com">info@adat-tech.com</a>
+              </p>
+              <p>
+                <strong>Our Phone:</strong>{" "}
+                <a href="tel:+97142297609">+971 (04) 229 7609</a>
+              </p>
+            </div>
+
+            <div className="social-links" aria-label="Social links">
+              <a href="#" aria-label="Instagram">
+                IG
+              </a>
+              <a href="#" aria-label="LinkedIn">
+                in
+              </a>
+              <a href="#" aria-label="Facebook">
+                f
+              </a>
+            </div>
           </div>
-          <p>Enterprise software, cloud platforms, and business automation.</p>
+
+          <div className="footer-side">
+            <form className="enquiry-form">
+              <h2>Make An Enquiry</h2>
+              <div className="form-grid">
+                <input type="text" name="name" placeholder="Name" aria-label="Name" />
+                <input type="email" name="email" placeholder="Email" aria-label="Email" />
+                <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" />
+                <button type="submit">Submit Now</button>
+              </div>
+            </form>
+
+            <div className="footer-divider" />
+
+            <div className="footer-links">
+              <div>
+                <h2>Navigation</h2>
+                <a href="#">Home</a>
+                <a href="#platform">About</a>
+                <a href="#products">Products</a>
+                <a href="#industries">Brands</a>
+                <a href="#products">Blog</a>
+              </div>
+              <div>
+                <h2>Support Center</h2>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms &amp; Conditions</a>
+                <a href="#">Disclaimer</a>
+                <a href="#">Careers</a>
+                <a href="#contact">Contact</a>
+              </div>
+            </div>
+          </div>
         </div>
       </footer>
     </main>
