@@ -132,11 +132,11 @@ export default function Home() {
             <a href="#industries" className="nav-link">
               Industries
             </a>
-            {brandLogos.length > 0 && (
+            {/* {brandLogos.length > 0 && (
               <a href="#brands" className="nav-link">
                 Brands
               </a>
-            )}
+            )} */}
             <a href="#contact" className="nav-link">
               Contact
             </a>
@@ -418,7 +418,7 @@ export default function Home() {
         </div>
       </section>
 
-      {brandLogos.length > 0 && (
+      {/* {brandLogos.length > 0 && (
         <section id="brands" className="brands-section">
           <div className="mx-auto max-w-7xl px-5 text-center sm:px-8">
             <h2 className="text-4xl font-semibold leading-tight sm:text-2xl">
@@ -443,7 +443,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-      )}
+      )} */}
 
       <footer id="contact" className="site-footer">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.85fr_1.15fr]">
@@ -472,7 +472,7 @@ export default function Home() {
               </p>
               <p>
                 <strong>Our Email:</strong>{" "}
-                <a href="mailto:info@adat-tech.com">info@adat-tech.com</a>
+                <a href="mailto:info.benoft@gmail.com">info.benoft@gmail.com</a>
               </p>
               <p>
                 <strong>Our Phone:</strong>{" "}
@@ -501,7 +501,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; 2026, Adat Tech International LLC. All rights reserved.
+          &copy; 2026, Benoft. All rights reserved.
         </div>
       </footer>
     </main>
