@@ -1,6 +1,10 @@
+import { existsSync, readdirSync } from "fs";
 import Image from "next/image";
+import path from "path";
 import logoDark from "../public/assets/logo-dark.png";
 import logoWhite from "../public/assets/logo-white.png";
+
+export const dynamic = "force-dynamic";
 
 const suites = [
   {
@@ -34,6 +38,14 @@ const platformSignals = [
   "Integration layer",
 ];
 
+const businessHighlights = [
+  "Unified Platform",
+  "Smart Automation",
+  "Scalable Solutions",
+  "Secure & Reliable",
+  "Built for Businesses",
+];
+
 const industries = [
   "Trading and Distribution",
   "Manufacturing",
@@ -43,6 +55,14 @@ const industries = [
   "Field Operations",
 ];
 
+const projectBookFeatures = [
+  "Project budgets and status",
+  "Client and vendor records",
+  "Invoices, bills, and expenses",
+  "Profit and loss reports",
+  "Excel export and local backup",
+];
+
 const dashboardRows = [
   ["Finance close", "On track", "91%"],
   ["Purchase approvals", "Accelerated", "76%"],
@@ -50,7 +70,38 @@ const dashboardRows = [
   ["Stock planning", "Optimized", "93%"],
 ];
 
+const brandImageExtensions = new Set([".avif", ".gif", ".jpg", ".jpeg", ".png", ".svg", ".webp"]);
+
+function getBrandLogos() {
+  const brandsDirectory = path.join(process.cwd(), "public", "brands");
+
+  if (!existsSync(brandsDirectory)) {
+    return [];
+  }
+
+  return readdirSync(brandsDirectory, { withFileTypes: true })
+    .filter((entry) => entry.isFile())
+    .map((entry) => entry.name)
+    .filter((fileName) => brandImageExtensions.has(path.extname(fileName).toLowerCase()))
+    .sort((a, b) => a.localeCompare(b))
+    .map((fileName) => {
+      const label = path
+        .basename(fileName, path.extname(fileName))
+        .replace(/[-_]+/g, " ")
+        .replace(/\b\w/g, (letter) => letter.toUpperCase());
+
+      return {
+        name: label,
+        src: `/brands/${fileName}`,
+      };
+    });
+}
+
 export default function Home() {
+  const brandLogos = getBrandLogos();
+  const scrollingBrandLogos = Array.from({ length: 16 }, () => brandLogos).flat();
+  const scrollingPlatformSignals = Array.from({ length: 16 }, () => platformSignals).flat();
+
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--brand-border)] bg-white/88 text-[var(--foreground)] shadow-[0_10px_40px_rgba(6,42,191,0.06)] backdrop-blur-2xl">
@@ -81,6 +132,11 @@ export default function Home() {
             <a href="#industries" className="nav-link">
               Industries
             </a>
+            {brandLogos.length > 0 && (
+              <a href="#brands" className="nav-link">
+                Brands
+              </a>
+            )}
             <a href="#contact" className="nav-link">
               Contact
             </a>
@@ -105,15 +161,15 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:min-h-[calc(100vh-80px)] lg:grid-cols-[0.96fr_1.04fr] lg:items-center lg:py-24">
           <div className="reveal-up">
             <p className="mb-6 inline-flex rounded-md border border-[var(--brand-border)] bg-white/72 px-4 py-2 text-sm font-semibold text-[var(--brand-navy)] shadow-sm backdrop-blur">
-              Enterprise software for companies that need control and speed
+              One Platform. Infinite Business.
             </p>
             <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] text-[var(--foreground)] sm:text-6xl lg:text-7xl">
-              Build the digital operating system for your business.
+              All-in-one business management for smarter growth.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--brand-text)]">
-              BENOFT designs connected ERP, CRM, HR, analytics, and automation
-              platforms for ambitious organizations that want every department
-              working from one intelligent source of truth.
+              BENOFT helps organizations streamline operations, boost
+              productivity, and drive growth through unified ERP, CRM, HR,
+              analytics, and automation solutions.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -210,13 +266,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[var(--brand-border)] bg-white py-5">
-        <div className="marquee">
-          <div className="marquee-track">
-            {[...platformSignals, ...platformSignals].map((signal, index) => (
-              <span key={`${signal}-${index}`}>{signal}</span>
-            ))}
-          </div>
+      <section className="bg-white px-5 py-8 sm:px-8">
+        <div className="business-highlight-grid mx-auto max-w-7xl">
+          {businessHighlights.map((item) => (
+            <div className="business-highlight" key={item}>
+              <span aria-hidden="true" />
+              <p>{item}</p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -253,9 +310,44 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="border-y border-[var(--brand-border)] bg-white py-5">
+        <div className="marquee">
+          <div className="marquee-track">
+            {scrollingPlatformSignals.map((signal, index) => (
+              <span key={`${signal}-${index}`}>{signal}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="products" className="relative bg-white py-24 text-[var(--foreground)]">
         <div className="section-sheen" />
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="project-book-panel">
+            <div>
+              <p className="eyebrow">Featured product</p>
+              <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
+                Project Book
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--brand-text)]">
+                Manage project income, expenses, invoices, bills, payments,
+                balances, and profitability from one focused business
+                application.
+              </p>
+            </div>
+            <div className="project-book-side">
+              <p>
+                A practical project finance workspace for teams that need clear
+                records, fast reporting, and dependable local control.
+              </p>
+              <div className="project-book-feature-grid">
+                {projectBookFeatures.map((feature) => (
+                  <span key={feature}>{feature}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+
           <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
             <div className="max-w-3xl">
               <p className="eyebrow">Product suites</p>
@@ -326,6 +418,33 @@ export default function Home() {
         </div>
       </section>
 
+      {brandLogos.length > 0 && (
+        <section id="brands" className="brands-section">
+          <div className="mx-auto max-w-7xl px-5 text-center sm:px-8">
+            <h2 className="text-4xl font-semibold leading-tight sm:text-2xl">
+              - BRANDS THAT TRUST US -
+            </h2>
+          </div>
+
+          <div className="brand-logo-marquee" aria-label="Brands that trust us">
+            <div className="brand-logo-track">
+              {scrollingBrandLogos.map((brand, index) => (
+                <div className="brand-logo-card" key={`${brand.src}-${index}`}>
+                  <Image
+                    src={brand.src}
+                    alt={brand.name}
+                    width={180}
+                    height={90}
+                    className="h-14 w-auto max-w-40 object-contain"
+                    unoptimized={brand.src.toLowerCase().endsWith(".svg")}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       <footer id="contact" className="site-footer">
         <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 lg:grid-cols-[0.85fr_1.15fr]">
           <div className="footer-about">
@@ -382,7 +501,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer-bottom">
-          &copy; ADAT TECH INTERNATIONAL LLC FZ
+          &copy; 2026, Adat Tech International LLC. All rights reserved.
         </div>
       </footer>
     </main>
