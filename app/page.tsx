@@ -52,8 +52,8 @@ const dashboardRows = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#f7f9ff] text-[#071044]">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-[#d8e4ff] bg-white/88 text-[#071044] shadow-[0_10px_40px_rgba(0,16,112,0.06)] backdrop-blur-2xl">
+    <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--brand-border)] bg-white/88 text-[var(--foreground)] shadow-[0_10px_40px_rgba(6,42,191,0.06)] backdrop-blur-2xl">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
           <a
             href="#"
@@ -71,7 +71,7 @@ export default function Home() {
             />
           </a>
 
-          <div className="hidden items-center gap-8 text-sm font-medium text-[#445188] lg:flex">
+          <div className="hidden items-center gap-8 text-sm font-medium text-[var(--brand-text)] lg:flex">
             <a href="#platform" className="nav-link">
               Platform
             </a>
@@ -88,7 +88,7 @@ export default function Home() {
 
           <a
             href="#contact"
-            className="group flex h-11 items-center justify-center rounded-md bg-[#0080ff] px-5 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(0,128,255,0.32)] transition hover:-translate-y-0.5 hover:bg-[#00a0ff]"
+            className="group flex h-11 items-center justify-center rounded-md bg-[var(--brand-blue)] px-5 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(18,148,255,0.32)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-cyan)]"
           >
             Book a demo
             <span className="ml-2 transition group-hover:translate-x-1">+</span>
@@ -96,7 +96,7 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="relative min-h-screen bg-[linear-gradient(135deg,#ffffff_0%,#f2f7ff_46%,#eef2ff_100%)] pt-20 text-[#071044]">
+      <section className="relative min-h-screen bg-[linear-gradient(135deg,#ffffff_0%,#f5f7fb_48%,#eef4ff_100%)] pt-20 text-[var(--foreground)]">
         <div className="hero-grid absolute inset-0 opacity-75" />
         <div className="hero-sheen" />
         <div className="data-beam data-beam-one" />
@@ -104,13 +104,13 @@ export default function Home() {
 
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:min-h-[calc(100vh-80px)] lg:grid-cols-[0.96fr_1.04fr] lg:items-center lg:py-24">
           <div className="reveal-up">
-            <p className="mb-6 inline-flex rounded-md border border-[#c8dcff] bg-white/72 px-4 py-2 text-sm font-semibold text-[#0068d6] shadow-sm backdrop-blur">
+            <p className="mb-6 inline-flex rounded-md border border-[var(--brand-border)] bg-white/72 px-4 py-2 text-sm font-semibold text-[var(--brand-navy)] shadow-sm backdrop-blur">
               Enterprise software for companies that need control and speed
             </p>
-            <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] text-[#071044] sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] text-[var(--foreground)] sm:text-6xl lg:text-7xl">
               Build the digital operating system for your business.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-[#445188]">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-[var(--brand-text)]">
               BENOFT designs connected ERP, CRM, HR, analytics, and automation
               platforms for ambitious organizations that want every department
               working from one intelligent source of truth.
@@ -118,13 +118,13 @@ export default function Home() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href="#products"
-                className="flex h-12 items-center justify-center rounded-md bg-[#001070] px-6 text-base font-semibold text-white shadow-[0_18px_45px_rgba(0,16,112,0.22)] transition hover:-translate-y-0.5 hover:bg-[#0080ff]"
+                className="flex h-12 items-center justify-center rounded-md bg-[var(--brand-navy)] px-6 text-base font-semibold text-white shadow-[0_18px_45px_rgba(6,42,191,0.22)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-blue)]"
               >
                 Explore products
               </a>
               <a
                 href="#platform"
-                className="flex h-12 items-center justify-center rounded-md border border-[#b8cdf9] bg-white/70 px-6 text-base font-semibold text-[#001070] transition hover:-translate-y-0.5 hover:bg-white"
+                className="flex h-12 items-center justify-center rounded-md border border-[var(--brand-border)] bg-white/70 px-6 text-base font-semibold text-[var(--brand-navy)] transition hover:-translate-y-0.5 hover:bg-white"
               >
                 View platform
               </a>
@@ -145,10 +145,10 @@ export default function Home() {
                       className="h-14 w-auto object-contain"
                     />
                     <div>
-                      <p className="text-sm font-semibold text-[#071044]">
+                      <p className="text-sm font-semibold text-[var(--foreground)]">
                         BENOFT Command Cloud
                       </p>
-                      <p className="text-xs text-[#6673a6]">Live business layer</p>
+                      <p className="text-xs text-[var(--brand-text)]">Live business layer</p>
                     </div>
                   </div>
                   <span className="pulse-badge">Operational</span>
@@ -162,14 +162,14 @@ export default function Home() {
                   ].map(([value, label]) => (
                     <div key={label} className="metric-tile">
                       <p className="text-3xl font-semibold">{value}</p>
-                        <p className="mt-2 text-xs uppercase text-[#6673a6]">
+                        <p className="mt-2 text-xs uppercase text-[var(--brand-text)]">
                         {label}
                       </p>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-5 overflow-hidden rounded-md border border-[#d8e4ff]">
+                <div className="mt-5 overflow-hidden rounded-md border border-[var(--brand-border)]">
                   {dashboardRows.map(([name, status, value], index) => (
                     <div
                       key={name}
@@ -177,15 +177,15 @@ export default function Home() {
                       style={{ animationDelay: `${index * 140}ms` }}
                     >
                       <div>
-                        <p className="font-medium text-[#071044]">{name}</p>
-                        <p className="text-xs text-[#6673a6]">{status}</p>
+                        <p className="font-medium text-[var(--foreground)]">{name}</p>
+                        <p className="text-xs text-[var(--brand-text)]">{status}</p>
                       </div>
                       <div className="w-28">
-                        <div className="mb-2 text-right text-xs text-[#6673a6]">
+                        <div className="mb-2 text-right text-xs text-[var(--brand-text)]">
                           {value}
                         </div>
-                        <div className="h-1.5 rounded-full bg-[#dce8ff]">
-                          <div className="h-1.5 rounded-full bg-[#0080ff]" style={{ width: value }} />
+                        <div className="h-1.5 rounded-full bg-[var(--brand-soft)]">
+                          <div className="h-1.5 rounded-full bg-[var(--brand-blue)]" style={{ width: value }} />
                         </div>
                       </div>
                     </div>
@@ -210,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[#d8e4ff] bg-white py-5">
+      <section className="border-y border-[var(--brand-border)] bg-white py-5">
         <div className="marquee">
           <div className="marquee-track">
             {[...platformSignals, ...platformSignals].map((signal, index) => (
@@ -227,7 +227,7 @@ export default function Home() {
             <h2 className="mt-4 text-4xl font-semibold leading-tight sm:text-5xl">
               One foundation for the systems your business depends on.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-[#445188]">
+            <p className="mt-6 text-lg leading-8 text-[var(--brand-text)]">
               Replace isolated tools with an integrated platform that brings
               process, data, security, and intelligence into a single business
               backbone.
@@ -253,7 +253,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="products" className="relative bg-white py-24 text-[#071044]">
+      <section id="products" className="relative bg-white py-24 text-[var(--foreground)]">
         <div className="section-sheen" />
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="mb-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
@@ -264,7 +264,7 @@ export default function Home() {
                 company and the flexibility of a partner.
               </h2>
             </div>
-            <p className="max-w-md text-base leading-7 text-[#445188]">
+            <p className="max-w-md text-base leading-7 text-[var(--brand-text)]">
               Start with the function you need most, then expand into a unified
               platform as your operations mature.
             </p>
@@ -290,7 +290,7 @@ export default function Home() {
               Built for teams where operations, finance, and customers move
               every day.
             </h2>
-            <p className="mt-6 text-lg leading-8 text-[#445188]">
+            <p className="mt-6 text-lg leading-8 text-[var(--brand-text)]">
               BENOFT adapts to complex approval paths, multi-location teams,
               document-heavy processes, and fast-changing management reporting.
             </p>
@@ -342,7 +342,9 @@ export default function Home() {
               and dedicated technology support that help growing companies run
               with clarity, control, and confidence.
             </p>
+          </div>
 
+          <div className="footer-side">
             <div className="footer-contact">
               <h2>Contact Info</h2>
               <p>
@@ -357,53 +359,30 @@ export default function Home() {
                 <strong>Our Phone:</strong>{" "}
                 <a href="tel:+97142297609">+971 (04) 229 7609</a>
               </p>
-            </div>
-
-            <div className="social-links" aria-label="Social links">
-              <a href="#" aria-label="Instagram">
-                IG
-              </a>
-              <a href="#" aria-label="LinkedIn">
-                in
-              </a>
-              <a href="#" aria-label="Facebook">
-                f
-              </a>
-            </div>
-          </div>
-
-          <div className="footer-side">
-            <form className="enquiry-form">
-              <h2>Make An Enquiry</h2>
-              <div className="form-grid">
-                <input type="text" name="name" placeholder="Name" aria-label="Name" />
-                <input type="email" name="email" placeholder="Email" aria-label="Email" />
-                <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" />
-                <button type="submit">Submit Now</button>
-              </div>
-            </form>
-
-            <div className="footer-divider" />
-
-            <div className="footer-links">
-              <div>
-                <h2>Navigation</h2>
-                <a href="#">Home</a>
-                <a href="#platform">About</a>
-                <a href="#products">Products</a>
-                <a href="#industries">Brands</a>
-                <a href="#products">Blog</a>
-              </div>
-              <div>
-                <h2>Support Center</h2>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms &amp; Conditions</a>
-                <a href="#">Disclaimer</a>
-                <a href="#">Careers</a>
-                <a href="#contact">Contact</a>
+              <div className="social-links" aria-label="Social links">
+                <a href="#" aria-label="Instagram">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1.1" />
+                  </svg>
+                </a>
+                <a href="#" aria-label="Facebook">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M14 8.6V7.2c0-.7.5-1.2 1.2-1.2H17V3h-2.7C11.8 3 10 4.8 10 7.3v1.3H7.8V12H10v9h4v-9h2.7l.5-3.4H14Z" />
+                  </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M5.4 8.8h3.4V20H5.4V8.8Zm1.7-5.2a2 2 0 1 1 0 4 2 2 0 0 1 0-4ZM11 8.8h3.2v1.5h.1c.5-.9 1.6-1.8 3.3-1.8 3.5 0 4.1 2.3 4.1 5.2V20h-3.4v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V20H11V8.8Z" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
+        </div>
+        <div className="footer-bottom">
+          &copy; ADAT TECH INTERNATIONAL LLC FZ
         </div>
       </footer>
     </main>
