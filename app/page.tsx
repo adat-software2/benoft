@@ -105,20 +105,20 @@ export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[var(--background)] text-[var(--foreground)]">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-[var(--brand-border)] bg-white/88 text-[var(--foreground)] shadow-[0_10px_40px_rgba(6,42,191,0.06)] backdrop-blur-2xl">
-        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
+        <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between gap-4 px-4 sm:px-8">
           <a
             href="#"
-            className="flex items-center"
+            className="flex min-w-0 flex-col items-start justify-center gap-1"
             aria-label="BENOFT home"
           >
             <Image
               src={logoWhite}
-              alt="BENOFT - Better Business, One Platform"
+              alt="BENOFT - One Platform, Infinite Business"
               width={1294}
               height={378}
               quality={100}
               priority
-              className="h-11 w-auto object-contain"
+              className="h-12 w-auto max-w-[56vw] object-contain drop-shadow-[0_10px_24px_rgba(6,42,191,0.16)] sm:h-16 sm:max-w-none lg:h-[4.5rem]"
             />
           </a>
 
@@ -144,7 +144,7 @@ export default function Home() {
 
           <a
             href="#contact"
-            className="group flex h-11 items-center justify-center rounded-md bg-[var(--brand-blue)] px-5 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(18,148,255,0.32)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-cyan)]"
+            className="group flex h-11 flex-none items-center justify-center rounded-md bg-[var(--brand-blue)] px-4 text-sm font-semibold text-white shadow-[0_12px_35px_rgba(18,148,255,0.32)] transition hover:-translate-y-0.5 hover:bg-[var(--brand-cyan)] sm:px-5"
           >
             Book a demo
             <span className="ml-2 transition group-hover:translate-x-1">+</span>
@@ -152,13 +152,13 @@ export default function Home() {
         </nav>
       </header>
 
-      <section className="relative min-h-screen bg-[linear-gradient(135deg,#ffffff_0%,#f5f7fb_48%,#eef4ff_100%)] pt-20 text-[var(--foreground)]">
+      <section className="relative min-h-screen bg-[linear-gradient(135deg,#ffffff_0%,#f5f7fb_48%,#eef4ff_100%)] pt-24 text-[var(--foreground)]">
         <div className="hero-grid absolute inset-0 opacity-75" />
         <div className="hero-sheen" />
         <div className="data-beam data-beam-one" />
         <div className="data-beam data-beam-two" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:min-h-[calc(100vh-80px)] lg:grid-cols-[0.96fr_1.04fr] lg:items-center lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl gap-12 px-5 py-20 sm:px-8 lg:min-h-[calc(100vh-96px)] lg:grid-cols-[0.96fr_1.04fr] lg:items-center lg:py-24">
           <div className="reveal-up">
             <p className="mb-6 inline-flex rounded-md border border-[var(--brand-border)] bg-white/72 px-4 py-2 text-sm font-semibold text-[var(--brand-navy)] shadow-sm backdrop-blur">
               One Platform. Infinite Business.
@@ -198,7 +198,7 @@ export default function Home() {
                       width={1294}
                       height={378}
                       quality={100}
-                      className="h-14 w-auto object-contain"
+                      className="h-16 w-auto object-contain drop-shadow-[0_10px_22px_rgba(6,42,191,0.14)]"
                     />
                     <div>
                       <p className="text-sm font-semibold text-[var(--foreground)]">
@@ -450,11 +450,11 @@ export default function Home() {
           <div className="footer-about">
             <Image
               src={logoDark}
-              alt="BENOFT - Better Business, One Platform"
+              alt="BENOFT - One Platform, Infinite Business"
               width={1594}
               height={478}
               quality={100}
-              className="h-20 w-auto object-contain sm:h-24"
+              className="h-28 w-auto max-w-full object-contain drop-shadow-[0_16px_32px_rgba(0,0,0,0.24)] sm:h-32 md:h-36"
             />
             <p className="footer-summary">
               BENOFT delivers intelligent business software, cloud platforms,

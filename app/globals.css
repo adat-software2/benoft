@@ -68,6 +68,111 @@ html {
   transform: scaleX(1);
 }
 
+.brand-loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  width: 100vw;
+  min-width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 100vh;
+  min-height: 100dvh;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 22% 20%, rgba(54, 209, 255, 0.2), transparent 28%),
+    radial-gradient(circle at 78% 26%, rgba(138, 43, 255, 0.16), transparent 30%),
+    linear-gradient(135deg, #ffffff 0%, #f5f7fb 48%, #eef4ff 100%);
+  color: var(--foreground);
+}
+
+.brand-preloader {
+  opacity: 1;
+  transition:
+    opacity 420ms ease,
+    visibility 420ms ease;
+}
+
+.brand-preloader-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.brand-loading-screen::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background-image:
+    linear-gradient(rgba(18, 148, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(6, 42, 191, 0.055) 1px, transparent 1px);
+  background-size: 58px 58px;
+  mask-image: radial-gradient(circle at center, #000 0%, transparent 72%);
+}
+
+.brand-bounce-loader {
+  position: relative;
+  display: grid;
+  width: 100%;
+  height: 100%;
+  min-height: 100dvh;
+  place-items: center;
+  padding: 24px;
+}
+
+.brand-bounce-stage {
+  position: relative;
+  width: clamp(180px, 38vw, 260px);
+  height: clamp(240px, 46vw, 330px);
+}
+
+.brand-bounce-ball {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  width: clamp(92px, 19vw, 140px);
+  aspect-ratio: 1;
+  transform: translateX(-50%);
+  transform-origin: center bottom;
+  animation: logo-bounce 980ms cubic-bezier(0.26, 0.72, 0.22, 1) infinite;
+}
+
+.brand-bounce-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 18px 24px rgba(6, 42, 191, 0.2));
+  animation: logo-squash 980ms ease-in-out infinite;
+}
+
+.brand-bounce-surface {
+  position: absolute;
+  right: 11%;
+  bottom: 30px;
+  left: 11%;
+  height: 34px;
+  border-radius: 999px;
+  background:
+    radial-gradient(ellipse at center, rgba(6, 42, 191, 0.26) 0%, rgba(18, 148, 255, 0.14) 42%, transparent 72%),
+    linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.76), transparent);
+  filter: blur(1px);
+  transform-origin: center;
+  animation: logo-surface-shadow 980ms ease-in-out infinite;
+}
+
+.brand-bounce-surface::before {
+  position: absolute;
+  inset: 10px 14%;
+  border-radius: 999px;
+  content: "";
+  background:
+    linear-gradient(90deg, rgba(54, 209, 255, 0), rgba(54, 209, 255, 0.48), rgba(138, 43, 255, 0.36), rgba(54, 209, 255, 0));
+  opacity: 0.7;
+  filter: blur(7px);
+}
+
 .hero-grid {
   background-image:
     linear-gradient(rgba(18, 148, 255, 0.08) 1px, transparent 1px),
@@ -633,7 +738,7 @@ html {
 }
 
 .footer-summary {
-  margin-top: 28px;
+  margin-top: 22px;
   max-width: 620px;
   color: rgba(255, 255, 255, 0.86);
   font-size: 22px;
@@ -863,6 +968,79 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes logo-bounce {
+  0% {
+    transform: translateX(-50%) translateY(0);
+    animation-timing-function: cubic-bezier(0.18, 0.72, 0.34, 1);
+  }
+
+  42% {
+    transform: translateX(-50%) translateY(-118px);
+    animation-timing-function: cubic-bezier(0.62, 0, 0.86, 0.36);
+  }
+
+  72% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+
+  84% {
+    transform: translateX(-50%) translateY(-44px);
+  }
+
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes logo-squash {
+  0%,
+  100% {
+    filter: drop-shadow(0 11px 18px rgba(6, 42, 191, 0.18));
+    transform: scaleX(1.16) scaleY(0.82);
+  }
+
+  9% {
+    transform: scaleX(0.88) scaleY(1.14);
+  }
+
+  32%,
+  54% {
+    filter: drop-shadow(0 30px 32px rgba(6, 42, 191, 0.15));
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scaleX(0.94) scaleY(1.06);
+  }
+
+  82% {
+    transform: scaleX(1.04) scaleY(0.94);
+  }
+}
+
+@keyframes logo-surface-shadow {
+  0%,
+  100% {
+    opacity: 0.92;
+    transform: scaleX(1) scaleY(1);
+  }
+
+  42% {
+    opacity: 0.28;
+    transform: scaleX(0.52) scaleY(0.68);
+  }
+
+  72% {
+    opacity: 0.62;
+    transform: scaleX(0.82) scaleY(0.84);
+  }
+
+  84% {
+    opacity: 0.44;
+    transform: scaleX(0.66) scaleY(0.74);
   }
 }
 
