@@ -1,6 +1,7 @@
 import Image from "next/image";
 import attendanceIcon from "../public/assets/face-attendance-icon.png";
 import logoDark from "../public/assets/logo-dark.png";
+import logoWhite from "../public/assets/logo-white.png";
 import projectBookIcon from "../public/assets/project-book-icon.png";
 
 export const dynamic = "force-dynamic";
@@ -29,7 +30,7 @@ export default function Home() {
     <main className="studio-site">
       <header className="studio-header">
         <a href="#top" className="studio-logo" aria-label="BENOFT home">
-          <Image src={logoDark} alt="BENOFT" width={1594} height={478} priority />
+          <Image src={logoWhite} alt="BENOFT" width={1294} height={378} priority />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#products">Products</a>

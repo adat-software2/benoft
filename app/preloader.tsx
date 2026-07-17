@@ -64,7 +64,6 @@ export default function Preloader() {
           </div>
 
           <div className="brand-loader-copy">
-            <span>Launching unified business cloud</span>
             <strong>BENOFT</strong>
           </div>
 

@@ -2385,7 +2385,7 @@ header {
 
 .studio-footer { background: #071642; color: #fff; padding-top: 74px; }
 .studio-footer-top { display: flex; align-items: end; justify-content: space-between; gap: 30px; border-bottom: 1px solid rgba(255, 255, 255, 0.16); padding-bottom: 48px; }
-.studio-footer-top img { width: min(350px, 60vw); height: auto; filter: brightness(0) invert(1); }
+.studio-footer-top img { width: min(350px, 60vw); height: auto; }
 .studio-footer-top p { margin: 0; color: rgba(255, 255, 255, 0.63); font-size: 16px; }
 .studio-footer-grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 48px; padding: 48px 0 66px; }
 .studio-footer-grid span { color: #72d8ff; font-size: 11px; font-weight: 800; letter-spacing: 0.09em; }
