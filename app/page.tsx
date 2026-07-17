@@ -1,5 +1,5 @@
 import Image from "next/image";
-import attendanceIcon from "../public/assets/face-attendance-icon.png";
+import attendanceIcon from "../public/assets/attendance-icon.png";
 import logoDark from "../public/assets/logo-dark.png";
 import logoWhite from "../public/assets/logo-white.png";
 import projectBookIcon from "../public/assets/project-book-icon.png";
