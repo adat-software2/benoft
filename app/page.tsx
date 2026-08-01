@@ -1,5 +1,6 @@
 import Image from "next/image";
 import attendanceIcon from "../public/assets/attendance-icon.png";
+import employeePortalIcon from "../public/assets/employee-portal-icon.png";
 import logoDark from "../public/assets/logo-dark.png";
 import logoWhite from "../public/assets/logo-white.png";
 import projectBookIcon from "../public/assets/project-book-icon.png";
@@ -22,6 +23,14 @@ const products = [
     icon: attendanceIcon,
     summary: "Capture face-based check-in and check-out, keep punches moving offline, and sync attendance back to Odoo.",
     details: ["On-device face matching", "Offline punch queue", "Attendance reports"],
+  },
+  {
+    number: "03",
+    name: "Employee Portal",
+    type: "Odoo workforce companion",
+    icon: employeePortalIcon,
+    summary: "Give employees and administrators one connected Android workspace for attendance, people, requests, and daily workforce operations.",
+    details: ["Employee self-service", "Team and leave workflows", "Reports with offline sync"],
   },
 ];
 
@@ -56,7 +65,7 @@ export default function Home() {
           </h1>
           <div className="studio-hero-bottom">
             <p>
-              Purpose-built software for project finance and reliable face attendance.
+              Purpose-built software for project finance, reliable attendance, and connected workforce operations.
               Practical by design. Ready for daily work.
             </p>
             <a href="#products" className="studio-round-link" aria-label="Explore BENOFT products">
@@ -77,9 +86,9 @@ export default function Home() {
 
       <section className="studio-ticker" aria-label="BENOFT capabilities">
         <div>
-          <span>PROJECT FINANCE</span><i>+</i><span>FACE ATTENDANCE</span><i>+</i>
+          <span>PROJECT FINANCE</span><i>+</i><span>FACE ATTENDANCE</span><i>+</i><span>EMPLOYEE PORTAL</span><i>+</i>
           <span>OFFLINE WORKFLOWS</span><i>+</i><span>ODOO SYNC</span><i>+</i>
-          <span>PROJECT FINANCE</span><i>+</i><span>FACE ATTENDANCE</span><i>+</i>
+          <span>PROJECT FINANCE</span><i>+</i><span>FACE ATTENDANCE</span><i>+</i><span>EMPLOYEE PORTAL</span><i>+</i>
           <span>OFFLINE WORKFLOWS</span><i>+</i><span>ODOO SYNC</span><i>+</i>
         </div>
       </section>
@@ -90,11 +99,11 @@ export default function Home() {
           <h2>Software that earns its place in the working day.</h2>
           <p>
             We focus on the records and decisions that need to stay dependable:
-            project money, people movement, offline continuity, and reports that stay easy to read.
+            project money, people movement, employee self-service, offline continuity, and reports that stay easy to read.
           </p>
         </div>
         <div className="studio-stat-line">
-          <span>02 PRODUCTS</span><span>01 CLEAR STANDARD</span><span>OFFLINE WHEN NEEDED</span>
+          <span>03 PRODUCTS</span><span>01 CLEAR STANDARD</span><span>OFFLINE WHEN NEEDED</span>
         </div>
       </section>
 
@@ -119,7 +128,7 @@ export default function Home() {
               <ul>
                 {product.details.map((detail) => <li key={detail}>{detail}</li>)}
               </ul>
-              <div className="studio-product-letter" aria-hidden="true">{index === 0 ? "P" : "F"}</div>
+              <div className="studio-product-letter" aria-hidden="true">{index === 0 ? "P" : index === 1 ? "F" : "E"}</div>
             </article>
           ))}
         </div>
@@ -132,7 +141,7 @@ export default function Home() {
           <h2>Track it.<br />Verify it.<br />Report it.</h2>
           <p>
             Project Book helps teams see the financial story of every project.
-            Face Attendance gives teams a simple, secure way to record presence.
+            Face Attendance records presence at the point of work, while Employee Portal connects the wider daily workforce experience.
           </p>
         </div>
       </section>

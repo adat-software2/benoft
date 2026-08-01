@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "BENOFT | Business Systems",
   description:
-    "BENOFT builds practical business systems for project finance and face attendance.",
+    "BENOFT builds practical business systems for project finance, face attendance, and connected workforce operations.",
   icons: {
     icon: "/assets/favicon.png",
   },

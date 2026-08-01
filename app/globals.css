@@ -2342,6 +2342,7 @@ header {
 .studio-product-satellites { position: absolute; right: 8%; bottom: 8%; z-index: 3; display: grid; gap: 14px; }
 .studio-satellite { display: flex; align-items: center; gap: 11px; padding: 10px 15px 10px 10px; border: 1px solid rgba(7, 22, 66, 0.13); border-radius: 100px; background: rgba(255, 255, 255, 0.73); box-shadow: 0 18px 40px rgba(6, 42, 191, 0.1); backdrop-filter: blur(12px); animation: studio-satellite 5s ease-in-out infinite; }
 .studio-satellite:nth-child(2) { margin-left: 42px; animation-delay: -2.5s; }
+.studio-satellite:nth-child(3) { margin-left: 18px; animation-delay: -4s; }
 .studio-satellite img { width: 45px; height: 45px; border-radius: 12px; object-fit: contain; }
 .studio-satellite span { color: #071642; font-size: 11px; font-weight: 800; }
 
@@ -2368,6 +2369,7 @@ header {
 .studio-product-icon-wrap { position: relative; display: grid; width: min(19vw, 210px); aspect-ratio: 1; place-items: center; }
 .studio-product-icon-wrap img { position: relative; z-index: 1; width: 64%; height: 64%; border-radius: 20%; object-fit: contain; filter: drop-shadow(0 20px 22px rgba(0, 0, 0, 0.3)); animation: studio-icon-float 6s ease-in-out infinite; }
 .studio-product-2 .studio-product-icon-wrap img { animation-delay: -2.5s; }
+.studio-product-3 .studio-product-icon-wrap img { animation-delay: -4s; }
 .studio-product-icon-ring { position: absolute; inset: 0; border: 1px solid rgba(114, 216, 255, 0.62); border-radius: 50%; animation: studio-ring-spin 16s linear infinite; }
 .studio-product-icon-ring::before { position: absolute; top: 15%; left: -4px; width: 8px; height: 8px; border-radius: 50%; background: #72d8ff; box-shadow: 0 0 20px #72d8ff; content: ""; }
 .studio-product-copy > p { margin: 0 0 14px; color: #72d8ff; font-size: 11px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
