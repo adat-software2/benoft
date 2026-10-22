@@ -15,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BENOFT | Business Systems",
+  title: "BENOFT | Business Software",
   description:
-    "BENOFT builds practical business systems for project finance, face attendance, and connected workforce operations.",
+    "BENOFT builds Project Book, Face Attendance and Employee Portal: practical software for project finance, attendance and workforce management.",
   icons: {
     icon: "/assets/favicon.png",
   },
@@ -32,7 +32,16 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${poppins.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
+      <head>
+        {/* Skip the intro before first paint when it already played in this visit. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "try{if(sessionStorage.getItem('benoft-intro-seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}",
+          }}
+        />
+      </head>
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <Preloader />
         {children}
