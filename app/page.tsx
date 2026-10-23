@@ -2,8 +2,8 @@ import { Fragment } from "react";
 import Image from "next/image";
 import attendanceIcon from "../public/assets/attendance-icon.png";
 import employeePortalIcon from "../public/assets/employee-portal-icon.png";
-import logoDark from "../public/assets/logo-dark.png";
-import logoWhite from "../public/assets/logo-white.png";
+import logoDark from "../public/assets/logo-full-dark.png";
+import logoWhite from "../public/assets/logo-full-light.png";
 import projectBookIcon from "../public/assets/project-book-icon.png";
 import Motion from "./motion";
 
@@ -103,7 +103,7 @@ export default function Home() {
       <Motion />
       <header className="studio-header">
         <a href="#top" className="studio-logo" aria-label="BENOFT home">
-          <Image src={logoWhite} alt="BENOFT" width={1294} height={378} priority />
+          <Image src={logoWhite} alt="BENOFT. One platform. Infinite business." priority sizes="180px" />
         </a>
         <nav aria-label="Primary navigation">
           <a href="#products">Products</a>
@@ -122,7 +122,7 @@ export default function Home() {
         <div className="studio-wordmark studio-wordmark-back" aria-hidden="true" data-speed="0.45" data-depth="-46">B</div>
         <div className="studio-wordmark studio-wordmark-front" aria-hidden="true" data-speed="-0.18" data-depth="34">O</div>
         <div className="studio-hero-content" data-speed="0.28" data-fade>
-          <p className="studio-overline" data-intro="up">BENOFT / BUSINESS SOFTWARE</p>
+          <p className="studio-overline" data-intro="up">ONE PLATFORM. INFINITE BUSINESS.</p>
           <h1>
             <span className="sr-only">Clear work. Real control.</span>
             <span className="studio-line" aria-hidden="true">
@@ -269,8 +269,8 @@ export default function Home() {
 
       <footer id="contact" className="studio-footer">
         <div className="studio-footer-top" data-reveal="up">
-          <Image src={logoDark} alt="BENOFT" width={1594} height={478} />
-          <p>Business software for practical daily control.</p>
+          <Image src={logoDark} alt="BENOFT. One platform. Infinite business." sizes="(max-width: 760px) 60vw, 350px" />
+          <p>One platform. Infinite business.</p>
         </div>
         <div className="studio-footer-grid">
           <div data-reveal="up">
