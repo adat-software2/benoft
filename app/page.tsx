@@ -5,11 +5,10 @@ import employeePortalIcon from "../public/assets/employee-portal-icon.png";
 import logoDark from "../public/assets/logo-full-dark.png";
 import logoWhite from "../public/assets/logo-full-light.png";
 import projectBookIcon from "../public/assets/project-book-icon.png";
+import DemoDialog from "./demo-dialog";
 import Motion from "./motion";
 
 export const dynamic = "force-dynamic";
-
-const demoLink = "mailto:info.benoft@gmail.com?subject=BENOFT%20product%20demo";
 
 const products = [
   {
@@ -101,6 +100,7 @@ export default function Home() {
   return (
     <main className="studio-site">
       <Motion />
+      <DemoDialog />
       <header className="studio-header">
         <a href="#top" className="studio-logo" aria-label="BENOFT home">
           <Image src={logoWhite} alt="BENOFT. One platform. Infinite business." priority sizes="180px" />
@@ -110,7 +110,7 @@ export default function Home() {
           <a href="#why">Why BENOFT</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="studio-header-cta" href={demoLink} data-magnetic="0.25">
+        <a className="studio-header-cta" href="#contact" data-demo="" data-magnetic="0.25">
           Book a demo
         </a>
       </header>
@@ -210,7 +210,7 @@ export default function Home() {
                 <h3>{product.name}</h3>
                 <strong>{product.tagline}</strong>
                 <span>{product.summary}</span>
-                <a className="studio-product-link" href={demoLink}>
+                <a className="studio-product-link" href="#contact" data-demo={product.name}>
                   Request a demo <b aria-hidden="true">→</b>
                 </a>
               </div>
@@ -260,7 +260,7 @@ export default function Home() {
           </h2>
           <div className="studio-kinetic-cta" data-reveal="up" style={delay(300)}>
             <p>Project Book shows the money. Face Attendance proves who was there. Employee Portal keeps every team connected.</p>
-            <a className="studio-button" href={demoLink} data-magnetic="0.2">
+            <a className="studio-button" href="#contact" data-demo="" data-magnetic="0.2">
               Book a demo <b aria-hidden="true">→</b>
             </a>
           </div>
