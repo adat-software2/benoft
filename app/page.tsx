@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import attendanceIcon from "../public/assets/attendance-icon.png";
 import employeePortalIcon from "../public/assets/employee-portal-icon.png";
 import logoDark from "../public/assets/logo-full-dark.png";
@@ -110,9 +111,14 @@ export default function Home() {
           <a href="#why">Why BENOFT</a>
           <a href="#contact">Contact</a>
         </nav>
-        <a className="studio-header-cta" href="#contact" data-demo="" data-magnetic="0.25">
-          Book a demo
-        </a>
+        <div className="studio-header-actions">
+          <Link className="studio-header-login" href="/login">
+            Login
+          </Link>
+          <a className="studio-header-cta" href="#contact" data-demo="" data-magnetic="0.25">
+            Book a demo
+          </a>
+        </div>
       </header>
 
       <section id="top" className="studio-hero">

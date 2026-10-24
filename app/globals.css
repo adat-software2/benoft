@@ -582,3 +582,37 @@ header {
   .demo-grid { grid-template-columns: 1fr; }
   .demo-phone { grid-template-columns: 100px 1fr; }
 }
+
+/* Sign-in hub (/login): one place to reach every BENOFT product */
+.studio-header-actions { display: flex; align-items: center; justify-self: end; gap: 22px; }
+.studio-header-login { color: #071642; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; transition: color 200ms ease; }
+.studio-header-login:hover { color: #1294ff; }
+.hub-page .studio-header { animation: none; }
+.hub { position: relative; isolation: isolate; min-height: 100svh; padding: clamp(130px, 16vh, 180px) 30px 80px; }
+.hub::before { position: absolute; inset: 0; z-index: -2; background: radial-gradient(circle at 78% 22%, rgba(18, 148, 255, 0.18), transparent 26%), radial-gradient(circle at 12% 80%, rgba(138, 43, 255, 0.14), transparent 28%); content: ""; }
+.hub-grid-bg { position: absolute; inset: 0; z-index: -1; background-image: linear-gradient(rgba(7, 22, 66, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(7, 22, 66, 0.05) 1px, transparent 1px); background-size: 62px 62px; mask-image: linear-gradient(to bottom, #000, transparent 85%); }
+.hub-head, .hub-apps, .hub-help { max-width: 980px; margin-right: auto; margin-left: auto; }
+.hub-head h1 { margin: 18px 0 0; color: #071642; font-size: clamp(38px, 5.4vw, 68px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+.hub-head > p:last-child { margin: 18px 0 0; color: #50617f; font-size: 17px; }
+.hub-apps { display: grid; gap: 16px; margin-top: 48px; padding: 0; list-style: none; }
+.hub-app { display: grid; grid-template-columns: 64px 1fr auto; align-items: center; gap: 24px; border: 1px solid rgba(7, 22, 66, 0.1); border-radius: 22px; background: rgba(255, 255, 255, 0.86); padding: 24px 28px; box-shadow: 0 18px 50px rgba(6, 42, 191, 0.06); transition: border-color 300ms ease, box-shadow 300ms ease, transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+.hub-app img { width: 64px; height: 64px; border-radius: 16px; }
+.hub-app.is-live:hover { border-color: rgba(18, 148, 255, 0.35); box-shadow: 0 26px 60px rgba(6, 42, 191, 0.14); transform: translateY(-4px); }
+.hub-app-copy span { color: #1294ff; font-size: 11px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
+.hub-app-copy h2 { margin: 4px 0 0; color: #071642; font-size: 24px; font-weight: 700; }
+.hub-app-copy p { margin: 6px 0 0; color: #50617f; font-size: 15px; line-height: 1.5; }
+.hub-app-action { display: grid; justify-items: end; gap: 8px; }
+.hub-app-action small { color: #7c8aa5; font-size: 12px; }
+.hub-app-elsewhere { max-width: 220px; margin: 0; color: #7c8aa5; font-size: 13px; line-height: 1.5; text-align: right; }
+.hub-help { display: grid; gap: 8px; margin-top: 40px; color: #50617f; font-size: 15px; }
+.hub-help p { margin: 0; }
+.hub-help a { color: #062abf; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .studio-header-actions { gap: 14px; }
+  .hub { padding: 110px 16px 60px; }
+  .hub-app { grid-template-columns: 52px 1fr; gap: 16px; padding: 20px; }
+  .hub-app img { width: 52px; height: 52px; }
+  .hub-app-action, .hub-app-elsewhere { grid-column: 1 / -1; justify-items: stretch; max-width: none; text-align: left; }
+  .hub-app-action .studio-button { justify-content: center; }
+}

@@ -43,7 +43,8 @@ export default function Preloader() {
     const root = document.documentElement;
     let seen = false;
     try {
-      seen = window.sessionStorage.getItem(SEEN_KEY) === "1";
+      // People signing in go straight to their app, so the sign-in page skips the intro.
+      seen = window.sessionStorage.getItem(SEEN_KEY) === "1" || window.location.pathname.startsWith("/login");
       window.sessionStorage.setItem(SEEN_KEY, "1");
     } catch {
       // Storage can be blocked; the intro then simply plays every time.

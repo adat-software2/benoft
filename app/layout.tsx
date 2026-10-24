@@ -35,10 +35,10 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <head>
-        {/* Skip the intro before first paint when it already played in this visit. */}
+        {/* Skip the intro before first paint when it already played in this visit, or on the sign-in page. */}
         <script
           dangerouslySetInnerHTML={{
-            __html: "try{if(sessionStorage.getItem('benoft-intro-seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}",
+            __html: "try{if(location.pathname.indexOf('/login')===0||sessionStorage.getItem('benoft-intro-seen')==='1')document.documentElement.classList.add('intro-seen')}catch(e){}",
           }}
         />
       </head>
